@@ -1,12 +1,12 @@
-title: John Smith
+title: ORC Blog
 description: My Personal Blog
-author: John Smith
+author: ORC Team
 logo: /hcz-jekyll-blog/static/img/avatar.png
 github: https://github.com/codeasashu
 about: Freelance developer
 
-baseurl: "https://codeasashu.github.io/hcz-jekyll-blog"
-url: "https://codeasashu.github.io/hcz-jekyll-blog"
+baseurl: "https://orcteam.github.io/blog/"
+url: "https://orcteam.github.io/blog/"
 
 allowsearch: true
 
