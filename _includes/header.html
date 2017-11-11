@@ -1,22 +1,47 @@
-<header class="site-header">
-<div class="wrapper">
-<nav class="site-nav">         
-        <span class="menu-bar" onclick="openNav()">
-            <svg id="i-menu" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="#eee" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%"><path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24" /></svg>
-        </span>
-</nav> 
-
-<div class="profile">
-<a href="{{site.baseurl}}/">
-<img class="author-image" alt="site-title" src="{{site.baseurl}}/images/{{site.author.image}}">
-</a>
-<h1 class="author-about">{{site.author.name}}</h1>
-</div>
-<div class="menu-category">
-<div class="menu-item"><a class="{% if page.url == '/design/' %}active{% endif %} menu-link" href="{{site.baseurl}}/design/">Design</a></div>
-<div class="menu-item"><a class="{% if page.url == '/code/' %}active{% endif %}  menu-link" href="{{site.baseurl}}/code/">Code</a></div>
-<div class="menu-item"><a class="{% if page.url == '/life/' %}active{% endif %}  menu-link" href="{{site.baseurl}}/life/">Life</a></div>
-</div>
-</div>
-</header>
-
+<div class="header-panel shadow-z-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="row-picture">
+              <img id="about" class="logo-img" src="{{ site.logo }}" height="75px" width="75px">
+            </div>
+            <div class="row-details">
+              <h4 class="list-group-item-heading">{{ site.author }}</h4>
+              <p class="list-group-item-text">{{ site.about }}</p>
+              {% include social_links.html %}
+            </div>
+            <div class="navbar-header pull-right">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-2x fa-bars"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-9 col-sm-8 col-xs-12">
+          <div class="row">
+            <h2 class="blog-title-pro {% if site.allowsearch ==  true %}col-md-6 col-sm-12 col-xs-12 {% endif %}">{{ page.title }}</h2>
+            {% if site.allowsearch ==  true %}
+            <div class="col-md-6 col-sm-12 col-xs-12 searchcontrol" id="js-search">
+              <input class="form-control" type="text" id="js-search__input" placeholder="Search">
+              <ul class="search__results" id="js-search__results"></ul>
+            </div>
+            {% endif %}
+            </div>
+            <p class="info">
+              {% if page.date %}
+                <span class="time">{{ page.date | date_to_string }}</span>
+              {% endif %}
+              {% if page.categories.size > 0 %}
+                <span class="categories">
+                  &raquo; 
+                  {% for category in page.categories %}
+                    <a href="{{ site.baseurl }}/category/{{ category }}">{{ category }}</a>
+                    {% if forloop.last == false %}, {% endif %}
+                  {% endfor %}
+                </span>
+              {% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
