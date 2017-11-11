@@ -1,12 +1,12 @@
 title: ORC Blog
 description: My Personal Blog
 author: ORC Team
-logo: /static/img/avatar.png
+logo: /blog/static/img/avatar.png
 github: https://github.com/codeasashu
 about: Freelance developer
 
-baseurl: "https://orcteam.github.io/blog/"
-url: "https://orcteam.github.io/blog/"
+baseurl: "https://orcteam.github.io/blog"
+url: "https://orcteam.github.io/blog"
 
 allowsearch: true
 
